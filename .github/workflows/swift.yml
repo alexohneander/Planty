@@ -1,19 +1,24 @@
-name: Swift
-
 on:
   push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
-
+    branches:    
+      - master
+name: Build
 jobs:
-  build:
-
-    runs-on: macos-latest
-
+  test:
+    name: Build
+    runs-on: macOS-latest
+    strategy:
+        matrix:
+          destination: ['platform=iOS Simulator,OS=13.5,name=iPhone 11']
     steps:
-    - uses: actions/checkout@v2
-    - name: Select Xcode
-      run: sudo xcode-select -switch /Applications/Planty.app
-    - name: Xcode version
-      run: /usr/bin/xcodebuild -version
+      - name: Checkout
+        uses: actions/checkout@master
+      - name: Build and Text
+        run: |
+          cd Planty
+          xcodebuild clean build test -project Planty.xcodeproj -scheme Texstyle -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
+        env: 
+         destination: ${{ matrix.destination }}
+#      - name: Update Code Coverage
+#        run: |
+#          bash <(curl -s https://codecov.io/bash) -J 'Planty'
