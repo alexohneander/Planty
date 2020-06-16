@@ -13,7 +13,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Build
-      run: swift build -v
-    - name: Run tests
-      run: swift test -v
+    - name: Select Xcode
+      run: sudo xcode-select -switch /Applications/Xcode_13.5.app
+    - name: Xcode version
+      run: /usr/bin/xcodebuild -version
+    - name: Build archive
