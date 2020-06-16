@@ -16,6 +16,7 @@
 		FAA48617249963D600235D1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAA48615249963D600235D1F /* LaunchScreen.storyboard */; };
 		FAA48622249963D700235D1F /* PlantyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA48621249963D700235D1F /* PlantyTests.swift */; };
 		FAA4862D249963D700235D1F /* PlantyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA4862C249963D700235D1F /* PlantyUITests.swift */; };
+		FAA4863B249963F000235D1F /* PlantyModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = FAA4863A249963F000235D1F /* PlantyModel.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		FAA48628249963D700235D1F /* PlantyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlantyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA4862C249963D700235D1F /* PlantyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantyUITests.swift; sourceTree = "<group>"; };
 		FAA4862E249963D700235D1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAA4863A249963F000235D1F /* PlantyModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = PlantyModel.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				FAA48607249963D500235D1F /* AppDelegate.swift */,
 				FAA48609249963D500235D1F /* SceneDelegate.swift */,
 				FAA4860B249963D500235D1F /* ViewController.swift */,
+				FAA4863A249963F000235D1F /* PlantyModel.mlmodel */,
 				FAA4860D249963D500235D1F /* Main.storyboard */,
 				FAA48613249963D600235D1F /* Assets.xcassets */,
 				FAA48615249963D600235D1F /* LaunchScreen.storyboard */,
@@ -265,6 +268,7 @@
 				FAA4860C249963D500235D1F /* ViewController.swift in Sources */,
 				FAA48608249963D500235D1F /* AppDelegate.swift in Sources */,
 				FAA4860A249963D500235D1F /* SceneDelegate.swift in Sources */,
+				FAA4863B249963F000235D1F /* PlantyModel.mlmodel in Sources */,
 				FAA48612249963D500235D1F /* Planty.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
