@@ -51,10 +51,16 @@ class ViewController: UIViewController {
             } else {
                 // Display top classifications ranked by confidence in the UI.
                 let topClassifications = classifications.prefix(2)
-
-                let result = topClassifications.first!.identifier
+                let topResult = topClassifications.first!
                 
-                self.resultLabel.text = result
+                if topResult.confidence > 0.85 {
+                    let result = topClassifications.first!.identifier
+                    self.resultLabel.text = result
+                    
+                    return
+                }
+                
+                self.resultLabel.text = "Nothing recognized."
             }
         }
     }
@@ -73,9 +79,19 @@ class ViewController: UIViewController {
         }
     }
     
+    /// IBAction Photo Button
     @IBAction func didTapTakePictureButton(_ sender: UIButton) {
         let imagePicker = UIImagePickerController()
-        imagePicker.sourceType = .camera
+        
+        // if not real device use MediaLibrary
+        if !UIImagePickerController.isSourceTypeAvailable(.camera) {
+            // PhotoLibrary
+            imagePicker.sourceType = .photoLibrary
+        } else {
+            // Camera
+            imagePicker.sourceType = .camera
+        }
+        
         imagePicker.delegate = self
         present(imagePicker, animated: true)
     }
