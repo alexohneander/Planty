@@ -30,5 +30,22 @@ class PlantyTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-
+    
+    //MARK: Plant Class Tests
+    
+    // Confirm that the Plant initializer returns a Plant object when passed valid parameters.
+    func testPlantInitializationSucceeds() {
+        
+        // Empty Description
+        let emptyDescription = Plant.init(name: "Test", description: nil, id: "Test")
+        XCTAssertNotNil(emptyDescription)
+        
+        // Empty Name String
+        let emptyNamePlant = Plant.init(name: "", description: nil, id: "Test")
+        XCTAssertNil(emptyNamePlant)
+        
+        // Empty Id String
+        let emptyIdPlant = Plant.init(name: "Test", description: nil, id: "")
+        XCTAssertNil(emptyIdPlant)
+    }
 }

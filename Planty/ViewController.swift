@@ -49,11 +49,15 @@ class ViewController: UIViewController {
             if classifications.isEmpty {
                 print("Nothing recognized.")
             } else {
+                
+                
+                 //Plant.getTranslatedList(classifications: classifications)
+                
                 // Display top classifications ranked by confidence in the UI.
                 let topClassifications = classifications.prefix(2)
                 let topResult = topClassifications.first!
                 
-                if topResult.confidence > 0.85 {
+                if topResult.confidence >= 0.85 {
                     let result = topClassifications.first!.identifier
                     self.resultLabel.text = result
                     
